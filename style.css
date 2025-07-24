@@ -224,35 +224,4 @@ footer {
   box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
-.homenagem-final {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #e8d6c3;
-  padding: 40px 20px;
-  border-top: 3px solid #8b5e3c;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.texto-lateral {
-  max-width: 300px;
-  text-align: center;
-  font-size: 16px;
-  color: #3a2a1b;
-}
-
-.texto-lateral h3 {
-  font-family: 'Playfair Display', serif;
-  color: #4b2e1d;
-  margin-bottom: 8px;
-}
-
-.imagem-homenagem {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-}
 
