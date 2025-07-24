@@ -1,62 +1,88 @@
-let carrinho = [];
+let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-function adicionarCarrinho(produto, preco) {
-  carrinho.push({ produto, preco });
+function salvarCarrinho() {
+  localStorage.setItem('carrinho', JSON.stringify(carrinho));
+}
+
+function adicionarCarrinho(nome, preco) {
+  const itemExistente = carrinho.find(item => item.nome === nome);
+  if (itemExistente) {
+    itemExistente.quantidade++;
+  } else {
+    carrinho.push({ nome, preco, quantidade: 1 });
+  }
+  salvarCarrinho();
   atualizarCarrinho();
 }
 
-function removerItem(index) {
-  carrinho.splice(index, 1);
+function removerDoCarrinho(nome) {
+  carrinho = carrinho.filter(item => item.nome !== nome);
+  salvarCarrinho();
+  atualizarCarrinho();
+}
+
+function limparCarrinho() {
+  carrinho = [];
+  salvarCarrinho();
   atualizarCarrinho();
 }
 
 function atualizarCarrinho() {
-  const lista = document.getElementById("lista-carrinho");
-  const totalEl = document.getElementById("total");
-  if (!lista || !totalEl) return;
+  const lista = document.getElementById('lista-carrinho');
+  const total = document.getElementById('total-carrinho');
 
-  lista.innerHTML = "";
-  let total = 0;
+  if (!lista || !total) return; // evita erros se não estiver na página de delivery
 
-  carrinho.forEach((item, index) => {
-    total += item.preco;
-    const li = document.createElement("li");
-    li.innerHTML = `
-      ${item.produto} - R$ ${item.preco.toFixed(2).replace('.', ',')}
-      <button onclick="removerItem(${index})">Remover</button>
-    `;
-    lista.appendChild(li);
-  });
-
-  totalEl.textContent = total.toFixed(2).replace('.', ',');
-}
-
-function enviarPedido() {
-  const nome = document.getElementById("nome").value.trim();
-  const endereco = document.getElementById("endereco").value.trim();
-
-  if (!nome || !endereco) {
-    alert("Por favor, preencha seu nome e endereço.");
-    return;
-  }
+  lista.innerHTML = '';
 
   if (carrinho.length === 0) {
-    alert("Seu carrinho está vazio.");
+    lista.innerHTML = '<li>Seu carrinho está vazio.</li>';
+    total.textContent = 'Total: R$0,00';
     return;
   }
 
-  let mensagem = `Olá! Meu nome é ${nome} e gostaria de fazer um pedido:\n\n`;
+  let soma = 0;
+  carrinho.forEach(item => {
+    const li = document.createElement('li');
+    li.textContent = `${item.nome} x${item.quantidade} - R$${(item.preco * item.quantidade).toFixed(2)}`;
 
-  carrinho.forEach((item, index) => {
-    mensagem += `${index + 1}. ${item.produto} - R$ ${item.preco.toFixed(2).replace('.', ',')}\n`;
+    const btnRemover = document.createElement('button');
+    btnRemover.textContent = 'X';
+    btnRemover.title = 'Remover do carrinho';
+    btnRemover.onclick = () => removerDoCarrinho(item.nome);
+
+    li.appendChild(btnRemover);
+    lista.appendChild(li);
+
+    soma += item.preco * item.quantidade;
   });
 
-  const total = carrinho.reduce((acc, item) => acc + item.preco, 0);
-  mensagem += `\nTotal: R$ ${total.toFixed(2).replace('.', ',')}\n`;
-  mensagem += `\nEndereço para entrega: ${endereco}`;
-
-  const numeroWhatsApp = "5596991848838"; // Substitua com seu número com DDD
-  const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-  window.open(url, "_blank");
+  total.textContent = `Total: R$${soma.toFixed(2)}`;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  atualizarCarrinho();
+});
+
+function enviarPedido() {
+  const nome = document.getElementById('nome').value.trim();
+  const endereco = document.getElementById('endereco').value.trim();
+
+  if (!nome || !endereco || carrinho.length === 0) {
+    alert("Por favor, preencha nome e endereço, e adicione itens ao carrinho.");
+    return;
+  }
+
+  let mensagem = `Olá! Gostaria de fazer um pedido:\n\n`;
+  carrinho.forEach(item => {
+    mensagem += `• ${item.nome} x${item.quantidade} - R$${(item.preco * item.quantidade).toFixed(2)}\n`;
+  });
+
+  const total = carrinho.reduce((soma, item) => soma + item.preco * item.quantidade, 0);
+  mensagem += `\nTotal: R$${total.toFixed(2)}\n\n`;
+  mensagem += `Nome: ${nome}\nEndereço: ${endereco}`;
+
+  const whatsappURL = `https://wa.me/5596991848838?text=${encodeURIComponent(mensagem)}`;
+  window.open(whatsappURL, '_blank');
+}
+
