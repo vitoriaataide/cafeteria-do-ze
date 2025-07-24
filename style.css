@@ -1,0 +1,217 @@
+/* Fundo geral marrom café */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #5e4636; /* marrom café */
+  margin: 0;
+  padding: 0;
+  color: #f3e9dc;
+  min-height: 100vh;
+}
+
+/* Fundo clarinho só no topo (header + nav) */
+.header-topo {
+  background-color: #fbf9f7; /* clarinho */
+  padding: 20px 0;
+  color: #5e4636;
+}
+
+/* Fonte elegante para títulos principais */
+header h1.titulo-principal {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  color: #5e4636;
+}
+
+/* Navegação centralizada */
+nav {
+  text-align: center;
+  margin-top: 15px;
+}
+nav a {
+  text-decoration: none;
+  margin: 0 15px;
+  color: #5e4636;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+nav a:hover {
+  color: #a67c00;
+}
+
+/* Centralizar textos da intro e delivery */
+.centro-texto {
+  text-align: center;
+  max-width: 700px;
+  margin: 40px auto;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #f3e9dc;
+}
+
+/* Títulos das seções do cardápio */
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #f3e9dc;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+/* Produtos do cardápio */
+.produto {
+  display: flex;
+  align-items: center;
+  background: #d9cbbf; /* bege claro */
+  border-radius: 8px;
+  padding: 12px;
+  margin: 12px auto;
+  max-width: 700px;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
+  gap: 15px;
+  color: #5e4636;
+}
+
+.produto img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+
+.produto p {
+  flex-grow: 1;
+  margin: 0;
+  font-size: 1rem;
+}
+
+.produto button {
+  background-color: #a67c00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+.produto button:hover {
+  background-color: #7a5a00;
+}
+
+/* Rodapé escuro */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #3b2f2f;
+  color: #f3e9dc;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+/* Estilo do carrinho */
+.carrinho-container {
+  background: #d9cbbf;
+  max-width: 700px;
+  margin: 20px auto 50px auto;
+  padding: 20px;
+  border-radius: 8px;
+  color: #5e4636;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.carrinho-container h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#lista-carrinho {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+#lista-carrinho li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #a67c00;
+  padding-bottom: 6px;
+}
+
+#lista-carrinho li button {
+  background: #7a5a00;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 2px 8px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+}
+
+#lista-carrinho li button:hover {
+  background: #a67c00;
+}
+
+#total-carrinho {
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: right;
+  margin-bottom: 15px;
+}
+
+#botao-limpar {
+  background-color: #a67c00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+#botao-limpar:hover {
+  background-color: #7a5a00;
+}
+
+/* Formulário centralizado no delivery */
+.form-centro {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.form-centro input {
+  width: 80%;
+  max-width: 400px;
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.form-centro button {
+  margin-top: 15px;
+  background-color: #a67c00;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.form-centro button:hover {
+  background-color: #7a5a00;
+}

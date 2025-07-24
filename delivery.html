@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delivery - Cafeteria do Zé</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header-topo">
+    <h1 class="titulo-principal">Delivery</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="delivery.html">Delivery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="centro-texto">
+      <p>Peça seu café e delícias com conforto e rapidez! Após preencher os dados abaixo, enviaremos uma mensagem automática no WhatsApp para confirmação do pedido e pagamento.</p>
+    </section>
+
+    <section class="carrinho-container">
+      <h2>Seu Carrinho</h2>
+      <ul id="lista-carrinho">
+        <!-- Itens do carrinho aparecem aqui -->
+      </ul>
+      <p id="total-carrinho">Total: R$0,00</p>
+      <button id="botao-limpar" onclick="limparCarrinho()">Limpar Carrinho</button>
+
+      <!-- Formulário abaixo do carrinho -->
+      <form id="form-pedido" onsubmit="enviarPedido(); return false;" class="form-centro">
+        <h3>Finalize seu Pedido</h3>
+        <label>Nome:<br />
+          <input type="text" id="nome" required />
+        </label><br /><br />
+        <label>Endereço:<br />
+          <input type="text" id="endereco" required />
+        </label><br /><br />
+        <button type="submit">Enviar Pedido via WhatsApp</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Cafeteria do Zé</p>
+  </footer>
+</body>
+</html>
+

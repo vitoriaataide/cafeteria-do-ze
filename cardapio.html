@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cardápio - Cafeteria do Zé</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="header-topo">
+    <h1 class="titulo-principal">Cardápio</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="cardapio.html">Cardápio</a>
+      <a href="delivery.html">Delivery</a>
+    </nav>
+  </header>
+  <main>
+
+    <h2 class="section-title">Bebidas</h2>
+
+    <div class="produto">
+      <img src="https://img.freepik.com/foto-gratis/cafe-expreso-grano-cafe_103577-3273.jpg?size=626&ext=jpg" alt="Expresso" />
+      <p><strong>Expresso</strong> – R$4,00 – café puro e intenso, o clássico que desperta os sentidos.</p>
+      <button onclick="adicionarCarrinho('Expresso', 4)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.ecycle.com.br/wp-content/uploads/2021/02/23094522/cafe-gelado.jpg" alt="Café Gelado" />
+      <p><strong>Café Gelado</strong> – R$12,00 – refrescante café com gelo, ideal para dias quentes.</p>
+      <button onclick="adicionarCarrinho('Café Gelado', 12)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://www.folgerscoffee.com/folgers/recipes/_Hero%20Images/Detail%20Pages/6330/image-thumb__6330__schema_image/CafeMocha-hero.61028a28.jpg" alt="Mocha" />
+      <p><strong>Mocha</strong> – R$14,00 – combinação de café, chocolate e leite vaporizado, perfeita doçura.</p>
+      <button onclick="adicionarCarrinho('Mocha', 14)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=120&q=80" alt="Cappuccino" />
+      <p><strong>Cappuccino</strong> – R$10,00 – café com leite vaporizado e toque especial de canela.</p>
+      <button onclick="adicionarCarrinho('Cappuccino', 10)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1572307485954-c9164f1815b3?auto=format&fit=crop&w=120&q=80" alt="Mocaccino" />
+      <p><strong>Mocaccino</strong> – R$10,00 – café com ganache e cacau, cremoso e delicioso.</p>
+      <button onclick="adicionarCarrinho('Mocaccino', 10)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=120&q=80" alt="Chá Verde" />
+      <p><strong>Chá Verde</strong> – R$6,00 – bebida leve e refrescante, ótima para relaxar.</p>
+      <button onclick="adicionarCarrinho('Chá Verde', 6)">Adicionar</button>
+    </div>
+
+    <h2 class="section-title">Salgados</h2>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1602436953364-9760e42b8e82?auto=format&fit=crop&w=120&q=80" alt="Pão de Queijo" />
+      <p><strong>Pão de Queijo</strong> – R$5,00 – pãozinho macio e recheado com queijo mineiro.</p>
+      <button onclick="adicionarCarrinho('Pão de Queijo', 5)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1589982905527-7e93a1871e7a?auto=format&fit=crop&w=120&q=80" alt="Empada" />
+      <p><strong>Empada</strong> – R$6,00 – massa crocante com recheio saboroso, tradição na cozinha brasileira.</p>
+      <button onclick="adicionarCarrinho('Empada', 6)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1572441710479-3f3640c80ae3?auto=format&fit=crop&w=120&q=80" alt="Coxinha" />
+      <p><strong>Coxinha</strong> – R$7,00 – salgadinho frito recheado com frango desfiado e temperado.</p>
+      <button onclick="adicionarCarrinho('Coxinha', 7)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=120&q=80" alt="Sanduíche Gourmet" />
+      <p><strong>Sanduíche Gourmet</strong> – R$15,00 – pão especial com ingredientes frescos e sabor intenso.</p>
+      <button onclick="adicionarCarrinho('Sanduíche Gourmet', 15)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1586015553645-fb3de2aade94?auto=format&fit=crop&w=120&q=80" alt="Pastel" />
+      <p><strong>Pastel</strong> – R$6,50 – massa fina e crocante com recheio quente e saboroso.</p>
+      <button onclick="adicionarCarrinho('Pastel', 6.5)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1556910103-1e21e88e99b0?auto=format&fit=crop&w=120&q=80" alt="Torta Salgada" />
+      <p><strong>Torta Salgada</strong> – R$8,00 – saborosa torta recheada, perfeita para qualquer hora.</p>
+      <button onclick="adicionarCarrinho('Torta Salgada', 8)">Adicionar</button>
+    </div>
+
+    <h2 class="section-title">Doces</h2>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=120&q=80" alt="Fatia de Bolo de Chocolate" />
+      <p><strong>Fatia de Bolo de Chocolate</strong> – R$8,00 – bolo úmido e rico em sabor, chocolate intenso.</p>
+      <button onclick="adicionarCarrinho('Fatia de Bolo de Chocolate', 8)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1505253210343-7c08e9b2a33c?auto=format&fit=crop&w=120&q=80" alt="Cheesecake" />
+      <p><strong>Cheesecake</strong> – R$10,00 – cremoso e delicado, com base crocante e cobertura doce.</p>
+      <button onclick="adicionarCarrinho('Cheesecake', 10)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=120&q=80" alt="Donuts" />
+      <p><strong>Donuts</strong> – R$6,00 – bolinho frito coberto com glacê e confeitos coloridos.</p>
+      <button onclick="adicionarCarrinho('Donuts', 6)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1562440499-518ce8d1d9fa?auto=format&fit=crop&w=120&q=80" alt="Pudim" />
+      <p><strong>Pudim</strong> – R$7,00 – sobremesa tradicional cremosa com calda de caramelo.</p>
+      <button onclick="adicionarCarrinho('Pudim', 7)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=120&q=80" alt="Mousse de Maracujá" />
+      <p><strong>Mousse de Maracujá</strong> – R$9,00 – doce leve e refrescante com toque cítrico.</p>
+      <button onclick="adicionarCarrinho('Mousse de Maracujá', 9)">Adicionar</button>
+    </div>
+
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1510626176961-4b7d6b3f8527?auto=format&fit=crop&w=120&q=80" alt="Bolo de Cenoura" />
+      <p><strong>Bolo de Cenoura</strong> – R$7,50 – bolo fofinho com cobertura de chocolate cremoso.</p>
+      <button onclick="adicionarCarrinho('Bolo de Cenoura', 7.5)">Adicionar</button>
+    </div>
+
+  </main>
+  <footer>
+    <p>&copy; 2025 Cafeteria do Zé</p>
+  </footer>
+</body>
+</html>
+
